@@ -1,3 +1,7 @@
+# Project continuity
+
+Before resuming work, read `HANDOFF.md`. Its top section is the current authoritative state; historical notes below it may be superseded. Honor the paused state until the user asks to resume. Never expose `.env` values.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
