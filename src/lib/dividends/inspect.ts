@@ -1,4 +1,5 @@
 import 'server-only';
+import {monitoringObservation} from './monitor-state';
 import type { Stock } from '@/lib/xstocks/assets';
 import { getIssuerData } from '@/lib/xstocks/client';
 import { readBalances } from '@/lib/solana/balances';
@@ -6,8 +7,8 @@ import { readTracking, trackingRequest } from '@/lib/supabase/tracking';
 import { baselineBlocker, compareHoldings, enrollmentBlocker } from '@/lib/dividends/eligibility';
 import { eventObservation } from '@/lib/xstocks/multipliers';
 import { inspectIndexedHistory } from '@/lib/solana/history';
-export async function inspectDividend(userId:string,wallet:string,stock:Stock,reservedClaimId?:string) {
-    const [issuer,balances,stored]=await Promise.all([getIssuerData(stock),readBalances(wallet),readTracking(userId,wallet,stock.mint)]);
+export async function inspectDividend(userId:string,wallet:string,stock:Stock,reservedClaimId?:string,monitor?:{issuer:Promise<Awaited<ReturnType<typeof getIssuerData>>>}) {
+    const [issuer,balances,stored]=await Promise.all([monitor?.issuer??getIssuerData(stock),readBalances(wallet),readTracking(userId,wallet,stock.mint)]);
     const current=balances.find(b=>b.mint===stock.mint)!;
     const snapshot=stored?.baseline??null;
     const event=issuer.events?.find(e=>e.effectiveTimeUtc&&Date.parse(e.effectiveTimeUtc)<=current.chainTime*1000);
@@ -36,7 +37,7 @@ export async function inspectDividend(userId:string,wallet:string,stock:Stock,re
     }
     const historyVerified=blockers.length===0;
     let verificationId:string|null=null;
-    if(stored&&event&&!reservedClaimId){
+    if(stored&&event&&!reservedClaimId&&!monitor){
       const observations=await trackingRequest('dividend_verifications?on_conflict=tracking_id,event_id',{
         method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=representation'},
         body:JSON.stringify({tracking_id:stored.id,event_id:event.eventId,event_version:event.version,
@@ -45,5 +46,5 @@ export async function inspectDividend(userId:string,wallet:string,stock:Stock,re
       });
       verificationId=observations[0]?.id??null;
     }
-    return {verificationId,historyVerified,blockers,history,event,snapshot,current,trackingId:stored?.id??null};
+    return {monitorObservation:monitor?monitoringObservation({baselineId:snapshot?.id??null,event,upcoming:(issuer.events??[]).filter(e=>e.effectiveTimeUtc&&Date.parse(e.effectiveTimeUtc)>current.chainTime*1000),blockers,history,current}):null,verificationId,historyVerified,blockers,history,event,snapshot,current,trackingId:stored?.id??null};
 }

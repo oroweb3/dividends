@@ -6,8 +6,8 @@ The server now connects verified eligibility, Titan preparation/simulation, rese
 
 - `POST /api/swaps/execute`: authenticated user; `{symbol, requestId, token}`. The token is a server-signed preview. Input amount, wallet, recipient, transaction bytes and signer are never accepted from the client. The server rechecks before reserving and before signing.
 - `POST /api/swaps/status`: authenticated user; `{symbol, requestId}`. Looks up only this user's matching wallet/stock claim, reconciles a known signature and may rebroadcast identical stored bytes only when execution/permission/expiry checks permit it. No fresh signing on retries.
-- `POST /api/jobs/dividends`: secret-authenticated, bounded sequential processing of five tracking records; `{cursor?}`. Reconciles pending claims first; otherwise verifies current Privy wallet ownership and delegation, creates a preview and invokes the same conversion service. Caller follows `nextCursor`.
-- `node --env-file=.env scripts/run-dividend-job.cjs`: processes all pages against DIVIDEND_APP_URL (defaults to localhost), authenticating with server-only DIVIDEND_JOB_SECRET. HTTPS required outside localhost. No scheduler has been enabled or deployed yet.
+- `POST /api/jobs/dividends`: secret-authenticated queued batch; body `{}`. Shares the scheduler lease with GET cron runs. Monitors accounts even with execution disabled; execution requires independent fresh checks.
+- `node --env-file=.env scripts/run-dividend-job.cjs`: processes one bounded queue batch against DIVIDEND_APP_URL (defaults to localhost), authenticating with server-only DIVIDEND_JOB_SECRET. HTTPS required outside localhost. The production Vercel cron ticks every minute.
 
 DIVIDEND_JOB_SECRET was generated locally without displaying it. Do not copy it into a NEXT_PUBLIC variable. DIVIDEND_EXECUTION_ENABLED is false/unset. Do not enable until funded live validation and rollout checks are complete.
 
@@ -23,7 +23,7 @@ The dashboard stores the request ID by wallet/stock across reloads. A failed res
 
 49 tests pass, including connected orchestration with controlled dependencies, real local cryptographic signatures, unchanged pinned transaction bytes, retry behavior, failure before reserve/persistence/signing, and simulation effects. A two-connection PostgreSQL test observed lock contention and verified exactly one worker acquired the signing gate; synthetic records were removed. Production build/lint pass. The authenticated local job returned disabled and did no processing.
 
-This does not constitute successful live funded Titan simulation, Privy policy enforcement against a real transaction, or onchain execution. These remain required before live enablement. The background job is ready for a trusted scheduler but is not scheduled. Existing V1 restrictions remain: uncertain indexed history/changed holdings block conversion; program allowlisting alone does not establish dividend eligibility or enforce principal protection.
+This does not constitute successful live funded Titan simulation, Privy policy enforcement against a real transaction, or onchain execution. These remain required before live enablement. The background job is deployed with a once-per-minute Vercel cron. Existing V1 restrictions remain: uncertain indexed history/changed holdings block conversion; program allowlisting alone does not establish dividend eligibility or enforce principal protection.
 
 Migration 005 (baseline rollover) is applied alongside 001–004. Its SQL checks passed on the configured Supabase database; synthetic fixtures were rolled back.
 
@@ -48,3 +48,13 @@ Sponsor variables are backend-only: PRIVY_SPONSOR_AUTHORIZATION_PRIVATE_KEY, PRI
 Validation: controlled zero-user-SOL simulation with account creation, exact payer rewrite, two real locally generated signatures, tampering/missing-signature rejection, sponsor over-debit and user SOL mutation rejection. SQL tests cover wrong owner, per-transaction/user/global limits, retries and expired quotes. A real two-connection test observed lock contention and rejected a competing distinct claim exceeding the user budget; synthetic records removed. No live Privy signing, funded Titan execution or onchain rollover has been performed.
 
 Sources: [Solana fee sponsorship](https://solana.com/developers/cookbook/transactions/fee-sponsorship), [Privy signTransaction](https://docs.privy.io/api-reference/wallets/solana/sign-transaction).
+
+## Efficient monitoring queue (migration 008)
+
+A cron tick claims up to 20 due accounts just in time, with three concurrent monitoring workers. It stops starting new work after two minutes; a ten-minute global lease and per-account leases cover interruptions. SQL uses FOR UPDATE SKIP LOCKED. Healthy accounts are due every five minutes; failed checks back off from five minutes to one hour. Heavy checks/backlogs can extend the interval. Execution-enabled batches remain serial to respect Titan's single-flight constraint. POST manual jobs use the same queue/lease; the old cursor body is no longer accepted.
+
+One queue row and one current monitoring row exist per enrollment. Scheduling metadata (next due, last checked, failure count) still updates per check; this is bounded operational state, not an accumulating history. Monitoring observations are canonicalized without read slots, clocks, prices or unrelated transaction counts. Unchanged fingerprints skip the write request; the database also suppresses identical upserts atomically. A current account lease is required to save changed observations. Monitor changed_at is the last meaningful change, not the last check—use queue last_checked_at for that.
+
+Routine monitoring never updates dividend_verifications. Interactive/pre-conversion checks retain fresh full evidence and the existing 30-second reservation constraint. Conversion journals, original enrollment and rollover evidence are unchanged. Issuer requests are shared once per stock within a batch only; this is not a global persistent event cache or webhook system. Every account is still periodically polled. Wallet webhooks and event-triggered fanout remain future work.
+
+Validation: 55 application tests; rollback SQL tests proved unchanged monitor rows retain their physical tuple and timestamp, changed observations update, stale workers fail, and retry intervals increase. A real two-connection check proved a worker skips the other worker's locked row. Migration008 applied; fixtures removed.
