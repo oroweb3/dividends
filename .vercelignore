@@ -1,0 +1,14 @@
+.env*
+.git
+.next
+.test-build
+node_modules
+scripts
+supabase
+tests
+docs
+HANDOFF.md
+AGENTS.md
+CLAUDE.md
+prod-ca-2021.crt
+*.tsbuildinfo
