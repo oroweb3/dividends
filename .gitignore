@@ -11,3 +11,6 @@ npm-debug.log*
 
 .vercel/
 prod-ca-2021.crt
+
+# Private one-off transaction journals (may contain signed bytes).
+.local/

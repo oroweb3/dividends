@@ -59,13 +59,15 @@ function AuthenticatedAccount() {
 
   return (
     <section className="dashboard">
-      <div className="dashboard-heading"><div><p className="eyebrow">YOUR DIVIDENDS ACCOUNT</p><h1>A golden beginning.</h1></div><button className="text-button" disabled={busy || creating} onClick={handleLogout}>Sign out</button></div>
-      <div className="panel wallet-panel"><div className="panel-heading"><span className="tag">{address ? "Account created" : "Account setup"}</span></div><h2>Dividend Account</h2><p>Your personal, user-owned Solana wallet.</p>
-        {address ? <div className="address-block"><label htmlFor="wallet-address">SOLANA WALLET ADDRESS</label><div className="address-row"><input id="wallet-address" readOnly value={address} /><button className="text-button" onClick={copyAddress}>{copied ? "Copied ✓" : "Copy address"}</button></div><p className="small-note" aria-live="polite">{copied ? "Wallet address copied to clipboard." : "This is your dedicated Dividend Account address."}</p></div> : !walletsReady ? <SetupWait message="Preparing your Dividend Account…" /> : <div><p>Create your personal Solana wallet to finish setting up your Dividend Account.</p><button className="button" disabled={busy || creating} onClick={handleCreate}>{creating ? "Creating account…" : "Create Dividend Account"}</button>{creating && <SetupWait message="Setting up your account…" />}</div>}
+      <div className="dashboard-heading"><div><p className="eyebrow">YOUR DIVIDEND ACCOUNT</p><h1>Your stocks.<br /><em>A golden future.</em></h1><p className="dashboard-intro">Follow your holdings and turn eligible future dividends into gold.</p></div><button className="text-button" disabled={busy || creating} onClick={handleLogout}>Sign out</button></div>
+      {address && <StocksPanel key={address} wallet={address} />}
+      <div className="account-tools">
+      <div className="panel wallet-panel"><div className="panel-heading"><span className="tag">{address ? "Solana account" : "Account setup"}</span></div><h2>Deposit to your account</h2><p>Your personal Solana wallet for supported xStocks.</p>
+        {address ? <div className="address-block"><label htmlFor="wallet-address">SOLANA WALLET ADDRESS</label><div className="address-row"><input id="wallet-address" readOnly value={address} /><button className="text-button" onClick={copyAddress}>{copied ? "Copied ✓" : "Copy address"}</button></div><p className="small-note" aria-live="polite">{copied ? "Wallet address copied to clipboard." : "Send only supported xStocks on Solana to this address."}</p></div> : !walletsReady ? <SetupWait message="Preparing your Dividend Account…" /> : <div><p>Create your personal Solana wallet to finish setting up your Dividend Account.</p><button className="button" disabled={busy || creating} onClick={handleCreate}>{creating ? "Creating account…" : "Create Dividend Account"}</button>{creating && <SetupWait message="Setting up your account…" />}</div>}
         {error && <p className="error" role="alert">{error}</p>}
       </div>
       {address && <DelegationControl key={`delegation:${address}`} wallet={address} />}
-      {address && <StocksPanel key={address} wallet={address} />}
+      </div>
       <div className="next-step"><span className="step-number">NEXT UP</span><div><h2>Keep your stocks. Save in gold.</h2><p>Enable tracking before a future dividend. Conversion requires verified eligibility and active automation permission.</p></div></div>
     </section>
   );

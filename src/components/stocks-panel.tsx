@@ -48,20 +48,26 @@ export function StocksPanel({wallet}: {wallet: string}) {
     finally {setSaving(false);}
   }
   return <section className="stocks-section" aria-label="Supported stocks">
-    <div className="stocks-heading"><div><p className="eyebrow">START WITH THE STOCKS YOU KNOW</p><h2>Your stocks</h2></div><button className="text-button" disabled={loading} onClick={()=>setRefresh(n=>n+1)}>{loading?'Refreshing…':'Refresh stocks'}</button></div>
-    <p className="muted">AAPLx, SPYx, and NVDAx on Solana. Purchases and dividend routing come next.</p>
+    <div className="stocks-heading"><div><p className="eyebrow">YOUR PORTFOLIO</p><h2>Stock holdings</h2></div><button className="text-button" disabled={loading} onClick={()=>setRefresh(n=>n+1)}>{loading?'Refreshing…':'Refresh stocks'}</button></div>
+    <p className="muted holdings-intro">Your supported stocks, all in one place.</p>
+    {data&&<div className="monitor-banner"><span className="status-dot" /><div><strong>{data.executionEnabled?'Conversions enabled':'Dividend tracking only'}</strong><p>{data.executionEnabled?'Tracked dividends must pass eligibility and permission checks before conversion.':'We’re checking for eligible dividends. Automatic conversion to GOLD isn’t enabled yet.'}</p></div><span className="tag">{data.executionEnabled?'Eligibility required':'Tracking only'}</span></div>}
     {error && <p className="error" role="alert">{error}{data?' Showing the previous observation.':''}</p>}
     {loading&&!data&&<p role="status">Reading stock balances and issuer events…</p>}
     {data?.chainError&&<p className="error" role="alert">{data.chainError}</p>}
     <div className="stock-grid">{data?.stocks.map(stock=><article className="panel stock-card" key={stock.mint}>
       <div className="panel-heading"><h3>{stock.name}</h3><span className="tag">{stock.symbol}</span></div>
-      <p className="stock-balance">{stock.balance?.economicBalance??'Unavailable'} <span>{stock.symbol}</span></p>
-      <p className="muted">Economic balance · Conversion not enabled</p>
+      <p className="stock-balance">{stock.balance?new Intl.NumberFormat('en-US',{maximumFractionDigits:8}).format(Number(stock.balance.economicBalance)):'Unavailable'} <span>{stock.symbol}</span></p>
+      <p className="balance-caption">Dividend-adjusted balance</p>
       <TrackingControl key={`${wallet}:${stock.symbol}`} symbol={stock.symbol} wallet={wallet} />
-      <p>Issuer indicative price: {stock.price===null?'Unavailable':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(stock.price)}</p>
-      <p className="small-note">Indicative token quote, not an executable swap price.</p>
+      <p className="quote-line">Reference quote: {stock.quote.price===null?'Unavailable':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(stock.quote.price)}{stock.quote.status==='stale'?' · Older quote':''}</p>
+      {stock.quote.price===null?<p className="small-note">Price feed temporarily unavailable. Balances and dividend checks are separate.</p>:<>
+        <p className="small-note">{stock.quote.source} · Updated: {stock.quote.cachedAt?date(stock.quote.cachedAt):'Time unavailable'}<br />Last trade: {stock.quote.lastTradeAt?date(stock.quote.lastTradeAt):'Time unavailable'}</p>
+        {stock.quote.status==='stale'&&<p className="small-note">Price or trade freshness could not be established within 15 minutes. This is not a live quote.</p>}
+        <p className="small-note quote-disclaimer">Reference only · Swap prices may differ.</p>
+      </>}
       {stock.warnings.map(w=><p className="error" key={w}>{w}</p>)}
-      <details className="inspection"><summary>Inspect balance & dividend data</summary>
+      <details className="inspection"><summary>Dividend checks & details</summary>
+        <p className="small-note">Provider price units relative to the xStocks balance multiplier are not yet confirmed. Portfolio-value calculation is withheld.</p>
         <dl><dt>Solana mint</dt><dd><a href={`https://solscan.io/token/${stock.mint}`} target="_blank" rel="noreferrer">{stock.mint}</a></dd>
           <dt>Raw base units</dt><dd>{stock.balance?.rawBaseUnits??'Unavailable'}</dd><dt>Decimals (onchain)</dt><dd>{stock.balance?.decimals??'Unavailable'}</dd>
           <dt>Raw token balance</dt><dd>{stock.balance?.rawBalance??'Unavailable'}</dd>

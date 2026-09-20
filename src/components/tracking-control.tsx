@@ -35,9 +35,9 @@ export function TrackingControl({symbol,wallet}:{symbol:string;wallet:string}) {
     }catch(e){setError(e instanceof Error?e.message:'Tracking unavailable.');}
     finally{setBusy(false);}
   }
-  return <div className="dividend-event">
-    {enabledAt?<p>Tracking enabled {new Date(enabledAt).toLocaleString()}</p>:<button className="text-button" disabled={loading||busy} onClick={enable}>{loading?'Loading tracking…':busy?'Recording starting holdings…':'Enable dividend tracking'}</button>}
-    <p className="small-note">Records starting holdings for future dividends. Does not authorize sales. Changes to holdings can block verification.</p>
+  return <div className="tracking-status">
+    {enabledAt?<><span className="tracking-pill">Tracking enabled</span><p className="small-note">Since {new Date(enabledAt).toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})}. Only dividends after enrollment can qualify.</p></>:<button className="text-button" disabled={loading||busy} onClick={enable}>{loading?'Loading tracking…':busy?'Recording starting holdings…':'Enable dividend tracking'}</button>}
+    <p className="small-note">Changes to your holdings may require further verification. Tracking does not authorize sales.</p>
     {error&&<p role="alert">{error}</p>}
   </div>;
 }

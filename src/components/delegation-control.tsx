@@ -44,9 +44,10 @@ export function DelegationControl({wallet}:{wallet:string}){
   }
   finally{lock.current=false;setBusy(false);}
  }
- return <div className="panel">
+ return <div className="panel automation-panel">
   <span className="tag">{status?.authorized?'Permission granted':'Automation permission'}</span>
-  <h2>Automatic dividend conversion</h2>
+  <h2>Automation permissions</h2>
+  <details className="permission-details"><summary>Manage permissions</summary>
   <p>Authorize Oro to sign transactions from this Dividend Account without asking you each time. You can revoke access below.</p>
   <p className="small-note">The signing policy permits Titan swaps, token account creation and compute instructions. Oro’s server must verify dividend eligibility, sale amounts and your GOLD destination before each conversion. The policy alone does not limit sales to dividends.</p>
   <p className="small-note">{status?.executionEnabled?'Automatic processing is available for tracked dividends that pass eligibility checks. Granting permission allows conversions without further signature prompts.':'Live conversions are disabled pending funded validation. Granting permission does not start conversions or sell anything now.'}</p>
@@ -55,5 +56,6 @@ export function DelegationControl({wallet}:{wallet:string}){
   {(status?.hasSigners||error)&&<><p className="small-note">Revocation removes all additional signers from this Dividend Account. Already-signed transactions may still complete.</p><button className="text-button" disabled={busy} onClick={()=>void act('revoke')}>Revoke all delegated access</button></>}
   <p><button className="text-button" disabled={busy} onClick={()=>void act('refresh')}>{busy?'Checking…':'Refresh permissions'}</button></p>
   {error&&<><p className="error" role="alert">{error}</p>{error.startsWith('Privy could not connect')&&<button className="text-button" disabled={busy} onClick={()=>window.location.reload()}>Reload wallet connection</button>}</>}
+ </details>
  </div>;
 }
