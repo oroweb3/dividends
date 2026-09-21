@@ -73,7 +73,7 @@ export function StocksPanel({wallet}: {wallet: string}) {
   }
   return <section className="stocks-section" aria-label="Supported stocks">
     <div className="stocks-heading"><div><p className="eyebrow">YOUR PORTFOLIO</p><h2>Stock holdings</h2></div><button className="text-button" disabled={loading} onClick={()=>setRefresh(n=>n+1)}>{loading?'Refreshing…':'Refresh stocks'}</button></div>
-    <p className="muted holdings-intro">20 supported xStocks, including stocks and ETFs. Only verified dividend events can qualify for conversion.</p>
+    <p className="muted holdings-intro">{data?`${data.stocks.length} supported xStocks`:'Supported xStocks'}, including stocks and ETFs. Only verified dividend events can qualify for conversion.</p>
     {data&&<div className="monitor-banner"><span className="status-dot" /><div><strong>{data.executionEnabled?'Conversions enabled':'Dividend tracking only'}</strong><p>{data.executionEnabled?'Tracked dividends must pass eligibility and permission checks before conversion.':'We’re checking for eligible dividends. Automatic conversion to GOLD isn’t enabled yet.'}</p></div><span className="tag">{data.executionEnabled?'Eligibility required':'Tracking only'}</span></div>}
     {error && <p className="error" role="alert">{error}{data?' Showing the previous observation.':''}</p>}
     {loading&&!data&&<p role="status">Reading stock balances and issuer events…</p>}

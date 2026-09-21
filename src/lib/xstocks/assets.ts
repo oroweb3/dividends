@@ -4,7 +4,6 @@
 export const assets = [
   {"issuer": "xstocks", "symbol": "SPYx", "name": "SP500", "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W"},
   {"issuer": "xstocks", "symbol": "GMEx", "name": "Gamestop", "mint": "Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc"},
-  {"issuer": "xstocks", "symbol": "GLDx", "name": "Gold", "mint": "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re"},
   {"issuer": "xstocks", "symbol": "NVDAx", "name": "NVIDIA", "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh"},
   {"issuer": "xstocks", "symbol": "SPCXx", "name": "SpaceX", "mint": "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8"},
   {"issuer": "xstocks", "symbol": "CRCLx", "name": "Circle", "mint": "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1"},
