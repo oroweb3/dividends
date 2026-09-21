@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-21T12:27:02.637Z",
+  "stock": {
+    "issuer": "xstocks",
+    "symbol": "BRK.Bx",
+    "name": "Berkshire Hathaway",
+    "mint": "Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x"
+  },
+  "issuerVerified": true,
+  "chainVerified": true,
+  "decimals": 8,
+  "issuerWarnings": [],
+  "dividendEventCount": 0,
+  "quote": {
+    "inputRaw": "100000",
+    "outputRaw": "116"
+  },
+  "note": "Read-only quote, not simulation or execution. Event endpoint compatibility does not mean a dividend exists or is expected."
+}

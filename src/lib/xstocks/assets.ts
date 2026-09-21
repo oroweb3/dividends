@@ -21,5 +21,6 @@ export const assets = [
   {"issuer": "xstocks", "symbol": "AMZNx", "name": "Amazon.com", "mint": "Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg"},
   {"issuer": "xstocks", "symbol": "HOODx", "name": "Robinhood", "mint": "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg"},
   {"issuer": "xstocks", "symbol": "STRCx", "name": "Strategy PP Variable", "mint": "Xs78JED6PFZxWc2wCEPspZW9kL3Se5J7L5TChKgsidH"},
+  {"issuer": "xstocks", "symbol": "BRK.Bx", "name": "Berkshire Hathaway", "mint": "Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x"},
 ] as const;
 export type Stock = typeof assets[number];
