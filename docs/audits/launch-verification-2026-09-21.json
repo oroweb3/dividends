@@ -1,0 +1,406 @@
+{
+  "checkedAt": "2026-09-21T09:20:11.759Z",
+  "note": "Read-only issuer/onchain validation and 100000-raw-unit Titan quote probes. No simulation, signing, balances changed, or execution approval. Quote availability is size/time dependent.",
+  "rows": [
+    {
+      "symbol": "SPYx",
+      "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W",
+      "name": "SP500 xStock",
+      "volume24hUSD": 28906518.11152605,
+      "liquidityUSD": 16774571.143561015,
+      "lastFetchedAt": 1789980007012,
+      "lastTradeAt": 1789980001000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 4,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "177"
+      }
+    },
+    {
+      "symbol": "GMEx",
+      "mint": "Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc",
+      "name": "Gamestop xStock",
+      "volume24hUSD": 28255999.010346368,
+      "liquidityUSD": 1752364.3706908266,
+      "lastFetchedAt": 1789980194451,
+      "lastTradeAt": 1789980191000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "5"
+      }
+    },
+    {
+      "symbol": "GLDx",
+      "mint": "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re",
+      "name": "Gold xStock",
+      "volume24hUSD": 7355962.371906152,
+      "liquidityUSD": 3235921.3810576843,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1789978379000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "91"
+      }
+    },
+    {
+      "symbol": "NVDAx",
+      "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
+      "name": "NVIDIA xStock",
+      "volume24hUSD": 6965957.785443013,
+      "liquidityUSD": 5154454.433908285,
+      "lastFetchedAt": 1789980781426,
+      "lastTradeAt": 1789980766000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "51"
+      }
+    },
+    {
+      "symbol": "SPCXx",
+      "mint": "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8",
+      "name": "SpaceX xStock",
+      "volume24hUSD": 5111485.22242015,
+      "liquidityUSD": 16594025.068373581,
+      "lastFetchedAt": 1789978202853,
+      "lastTradeAt": 1789978195000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "35"
+      }
+    },
+    {
+      "symbol": "CRCLx",
+      "mint": "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1",
+      "name": "Circle xStock",
+      "volume24hUSD": 4660431.513911191,
+      "liquidityUSD": 8566951.887248171,
+      "lastFetchedAt": 1789980192851,
+      "lastTradeAt": 1789980190000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "21"
+      }
+    },
+    {
+      "symbol": "QQQx",
+      "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ",
+      "name": "Nasdaq xStock",
+      "volume24hUSD": 4645414.348643718,
+      "liquidityUSD": 3567403.546613343,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789978968000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "167"
+      }
+    },
+    {
+      "symbol": "MSFTx",
+      "mint": "XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX",
+      "name": "Microsoft xStock",
+      "volume24hUSD": 3917672.5922916685,
+      "liquidityUSD": 1565845.7062721255,
+      "lastFetchedAt": 1789980605837,
+      "lastTradeAt": 1789980585000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "114"
+      }
+    },
+    {
+      "symbol": "GOOGLx",
+      "mint": "XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN",
+      "name": "Alphabet xStock",
+      "volume24hUSD": 3652459.635372554,
+      "liquidityUSD": 1479570.8772326352,
+      "lastFetchedAt": 1789980603540,
+      "lastTradeAt": 1789980595000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "81"
+      }
+    },
+    {
+      "symbol": "PLTRx",
+      "mint": "XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4",
+      "name": "Palantir xStock",
+      "volume24hUSD": 2118555.024701843,
+      "liquidityUSD": 849449.1203574393,
+      "lastFetchedAt": 1789980604145,
+      "lastTradeAt": 1789980566000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "40"
+      }
+    },
+    {
+      "symbol": "TSLAx",
+      "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB",
+      "name": "Tesla xStock",
+      "volume24hUSD": 1977263.1517618145,
+      "liquidityUSD": 3658713.542436795,
+      "lastFetchedAt": 1789980606899,
+      "lastTradeAt": 1789980591000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "84"
+      }
+    },
+    {
+      "symbol": "KOx",
+      "mint": "XsaBXg8dU5cPM6ehmVctMkVqoiRG2ZjMo1cyBJ3AykQ",
+      "name": "Coca-Cola xStock",
+      "volume24hUSD": 1376820.9219663762,
+      "liquidityUSD": 520711.95880846947,
+      "lastFetchedAt": 1789980620049,
+      "lastTradeAt": 1789980588000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "20"
+      }
+    },
+    {
+      "symbol": "MSTRx",
+      "mint": "XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ",
+      "name": "MicroStrategy xStock",
+      "volume24hUSD": 1331672.4936394677,
+      "liquidityUSD": 1922419.369697318,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789979553000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "37"
+      }
+    },
+    {
+      "symbol": "MCDx",
+      "mint": "XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2",
+      "name": "McDonald's xStock",
+      "volume24hUSD": 1328467.981086432,
+      "liquidityUSD": 1374454.3050132087,
+      "lastFetchedAt": 1789980678815,
+      "lastTradeAt": 1789980656000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "58"
+      }
+    },
+    {
+      "symbol": "AAPLx",
+      "mint": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
+      "name": "Apple xStock",
+      "volume24hUSD": 879133.055788958,
+      "liquidityUSD": 1318332.2102383734,
+      "lastFetchedAt": 1789980606965,
+      "lastTradeAt": 1789980577000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "76"
+      }
+    },
+    {
+      "symbol": "COINx",
+      "mint": "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu",
+      "name": "Coinbase xStock",
+      "volume24hUSD": 786136.8722141787,
+      "liquidityUSD": 2221699.0089115966,
+      "lastFetchedAt": 1789980192851,
+      "lastTradeAt": 1789980169000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "46"
+      }
+    },
+    {
+      "symbol": "METAx",
+      "mint": "Xsa62P5mvPszXL1krVUnU5ar38bBSVcWAB6fmPCo5Zu",
+      "name": "Meta xStock",
+      "volume24hUSD": 775702.9324980376,
+      "liquidityUSD": 953044.1692308106,
+      "lastFetchedAt": 1789980663212,
+      "lastTradeAt": 1789980632000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 5,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "156"
+      }
+    },
+    {
+      "symbol": "AMZNx",
+      "mint": "Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg",
+      "name": "Amazon.com xStock",
+      "volume24hUSD": 735484.4171714573,
+      "liquidityUSD": 708994.2086353616,
+      "lastFetchedAt": 1789980606988,
+      "lastTradeAt": 1789980422000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "58"
+      }
+    },
+    {
+      "symbol": "HOODx",
+      "mint": "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg",
+      "name": "Robinhood xStock",
+      "volume24hUSD": 697865.0515844126,
+      "liquidityUSD": 2479052.3079277426,
+      "lastFetchedAt": 1789980193192,
+      "lastTradeAt": 1789980135000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 0,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "28"
+      }
+    },
+    {
+      "symbol": "STRCx",
+      "mint": "Xs78JED6PFZxWc2wCEPspZW9kL3Se5J7L5TChKgsidH",
+      "name": "Strategy PP Variable xStock",
+      "volume24hUSD": 261375.62590429644,
+      "liquidityUSD": 878687.3829244009,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1789978352000,
+      "advisory": null,
+      "mintVerified": true,
+      "chainVerified": true,
+      "decimals": 8,
+      "issuerWarnings": [],
+      "dividendEventCount": 13,
+      "route": {
+        "status": "quoted",
+        "inputRaw": "100000",
+        "outputRaw": "24"
+      }
+    }
+  ]
+}

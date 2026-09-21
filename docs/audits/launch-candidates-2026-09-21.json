@@ -1,0 +1,1021 @@
+{
+  "checkedAt": "2026-09-21T08:55:01.004Z",
+  "source": "https://api.tokens.xyz/v1/assets/variant-markets",
+  "scope": "928 previously audited catalog mints; market ranking only, not issuer/chain/route approval",
+  "rows": [
+    {
+      "symbol": "SPYx",
+      "mint": "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W",
+      "name": "SP500 xStock",
+      "volume24hUSD": 28906518.11152605,
+      "liquidityUSD": 16774571.143561015,
+      "lastFetchedAt": 1789980007012,
+      "lastTradeAt": 1789980001000,
+      "advisory": null
+    },
+    {
+      "symbol": "GMEx",
+      "mint": "Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc",
+      "name": "Gamestop xStock",
+      "volume24hUSD": 28255999.010346368,
+      "liquidityUSD": 1752364.3706908266,
+      "lastFetchedAt": 1789980194451,
+      "lastTradeAt": 1789980191000,
+      "advisory": null
+    },
+    {
+      "symbol": "GLDx",
+      "mint": "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re",
+      "name": "Gold xStock",
+      "volume24hUSD": 7355962.371906152,
+      "liquidityUSD": 3235921.3810576843,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1789978379000,
+      "advisory": null
+    },
+    {
+      "symbol": "NVDAx",
+      "mint": "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh",
+      "name": "NVIDIA xStock",
+      "volume24hUSD": 6965957.785443013,
+      "liquidityUSD": 5154454.433908285,
+      "lastFetchedAt": 1789980781426,
+      "lastTradeAt": 1789980766000,
+      "advisory": null
+    },
+    {
+      "symbol": "SPCXx",
+      "mint": "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8",
+      "name": "SpaceX xStock",
+      "volume24hUSD": 5111485.22242015,
+      "liquidityUSD": 16594025.068373581,
+      "lastFetchedAt": 1789978202853,
+      "lastTradeAt": 1789978195000,
+      "advisory": null
+    },
+    {
+      "symbol": "CRCLx",
+      "mint": "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1",
+      "name": "Circle xStock",
+      "volume24hUSD": 4660431.513911191,
+      "liquidityUSD": 8566951.887248171,
+      "lastFetchedAt": 1789980192851,
+      "lastTradeAt": 1789980190000,
+      "advisory": null
+    },
+    {
+      "symbol": "QQQx",
+      "mint": "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ",
+      "name": "Nasdaq xStock",
+      "volume24hUSD": 4645414.348643718,
+      "liquidityUSD": 3567403.546613343,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789978968000,
+      "advisory": null
+    },
+    {
+      "symbol": "MSFTx",
+      "mint": "XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX",
+      "name": "Microsoft xStock",
+      "volume24hUSD": 3917672.5922916685,
+      "liquidityUSD": 1565845.7062721255,
+      "lastFetchedAt": 1789980605837,
+      "lastTradeAt": 1789980585000,
+      "advisory": null
+    },
+    {
+      "symbol": "GOOGLx",
+      "mint": "XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN",
+      "name": "Alphabet xStock",
+      "volume24hUSD": 3652459.635372554,
+      "liquidityUSD": 1479570.8772326352,
+      "lastFetchedAt": 1789980603540,
+      "lastTradeAt": 1789980595000,
+      "advisory": null
+    },
+    {
+      "symbol": "PLTRx",
+      "mint": "XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4",
+      "name": "Palantir xStock",
+      "volume24hUSD": 2118555.024701843,
+      "liquidityUSD": 849449.1203574393,
+      "lastFetchedAt": 1789980604145,
+      "lastTradeAt": 1789980566000,
+      "advisory": null
+    },
+    {
+      "symbol": "TSLAx",
+      "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB",
+      "name": "Tesla xStock",
+      "volume24hUSD": 1977263.1517618145,
+      "liquidityUSD": 3658713.542436795,
+      "lastFetchedAt": 1789980606899,
+      "lastTradeAt": 1789980591000,
+      "advisory": null
+    },
+    {
+      "symbol": "KOx",
+      "mint": "XsaBXg8dU5cPM6ehmVctMkVqoiRG2ZjMo1cyBJ3AykQ",
+      "name": "Coca-Cola xStock",
+      "volume24hUSD": 1376820.9219663762,
+      "liquidityUSD": 520711.95880846947,
+      "lastFetchedAt": 1789980620049,
+      "lastTradeAt": 1789980588000,
+      "advisory": null
+    },
+    {
+      "symbol": "MSTRx",
+      "mint": "XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ",
+      "name": "MicroStrategy xStock",
+      "volume24hUSD": 1331672.4936394677,
+      "liquidityUSD": 1922419.369697318,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789979553000,
+      "advisory": null
+    },
+    {
+      "symbol": "MCDx",
+      "mint": "XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2",
+      "name": "McDonald's xStock",
+      "volume24hUSD": 1328467.981086432,
+      "liquidityUSD": 1374454.3050132087,
+      "lastFetchedAt": 1789980678815,
+      "lastTradeAt": 1789980656000,
+      "advisory": null
+    },
+    {
+      "symbol": "AAPLx",
+      "mint": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
+      "name": "Apple xStock",
+      "volume24hUSD": 879133.055788958,
+      "liquidityUSD": 1318332.2102383734,
+      "lastFetchedAt": 1789980606965,
+      "lastTradeAt": 1789980577000,
+      "advisory": null
+    },
+    {
+      "symbol": "COINx",
+      "mint": "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu",
+      "name": "Coinbase xStock",
+      "volume24hUSD": 786136.8722141787,
+      "liquidityUSD": 2221699.0089115966,
+      "lastFetchedAt": 1789980192851,
+      "lastTradeAt": 1789980169000,
+      "advisory": null
+    },
+    {
+      "symbol": "METAx",
+      "mint": "Xsa62P5mvPszXL1krVUnU5ar38bBSVcWAB6fmPCo5Zu",
+      "name": "Meta xStock",
+      "volume24hUSD": 775702.9324980376,
+      "liquidityUSD": 953044.1692308106,
+      "lastFetchedAt": 1789980663212,
+      "lastTradeAt": 1789980632000,
+      "advisory": null
+    },
+    {
+      "symbol": "AMZNx",
+      "mint": "Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg",
+      "name": "Amazon.com xStock",
+      "volume24hUSD": 735484.4171714573,
+      "liquidityUSD": 708994.2086353616,
+      "lastFetchedAt": 1789980606988,
+      "lastTradeAt": 1789980422000,
+      "advisory": null
+    },
+    {
+      "symbol": "HOODx",
+      "mint": "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg",
+      "name": "Robinhood xStock",
+      "volume24hUSD": 697865.0515844126,
+      "liquidityUSD": 2479052.3079277426,
+      "lastFetchedAt": 1789980193192,
+      "lastTradeAt": 1789980135000,
+      "advisory": null
+    },
+    {
+      "symbol": "STRCx",
+      "mint": "Xs78JED6PFZxWc2wCEPspZW9kL3Se5J7L5TChKgsidH",
+      "name": "Strategy PP Variable xStock",
+      "volume24hUSD": 261375.62590429644,
+      "liquidityUSD": 878687.3829244009,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1789978352000,
+      "advisory": null
+    },
+    {
+      "symbol": "BRK.Bx",
+      "mint": "Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x",
+      "name": "Berkshire Hathaway xStock",
+      "volume24hUSD": 254853.1815222094,
+      "liquidityUSD": 308851.7371231967,
+      "lastFetchedAt": 1789980203690,
+      "lastTradeAt": 1789980198000,
+      "advisory": null
+    },
+    {
+      "symbol": "DFDVx",
+      "mint": "Xs2yquAgsHByNzx68WJC55WHjHBvG9JsMB7CWjTLyPy",
+      "name": "DFDV xStock",
+      "volume24hUSD": 205801.6692536935,
+      "liquidityUSD": 189871.73113243573,
+      "lastFetchedAt": 1789980866675,
+      "lastTradeAt": 1789980800000,
+      "advisory": null
+    },
+    {
+      "symbol": "INTCx",
+      "mint": "XshPgPdXFRWB8tP1j82rebb2Q9rPgGX37RuqzohmArM",
+      "name": "Intel xStock",
+      "volume24hUSD": 95054.31523537452,
+      "liquidityUSD": 132880.37688149727,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789980131000,
+      "advisory": null
+    },
+    {
+      "symbol": "TSMx",
+      "mint": "XsafvsGtzFqqHgTnA3aPC83EAMkacU5mcGtcSayhpVV",
+      "name": "TSMC xStock",
+      "volume24hUSD": 18033.30775159267,
+      "liquidityUSD": 4041.6341684085482,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789974459000,
+      "advisory": null
+    },
+    {
+      "symbol": "WMTx",
+      "mint": "Xs151QeqTCiuKtinzfRATnUESM2xTU6V9Wy8Vy538ci",
+      "name": "Walmart xStock",
+      "volume24hUSD": 7954.2517843474125,
+      "liquidityUSD": 25507.560023608698,
+      "lastFetchedAt": 1789980216458,
+      "lastTradeAt": 1789980202000,
+      "advisory": null
+    },
+    {
+      "symbol": "AVGOx",
+      "mint": "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo",
+      "name": "Broadcom xStock",
+      "volume24hUSD": 5628.233698691422,
+      "liquidityUSD": 144259.6306129897,
+      "lastFetchedAt": 1789980603585,
+      "lastTradeAt": 1789979055000,
+      "advisory": null
+    },
+    {
+      "symbol": "TQQQx",
+      "mint": "XsjQP3iMAaQ3kQScQKthQpx9ALRbjKAjQtHg6TFomoc",
+      "name": "TQQQ xStock",
+      "volume24hUSD": 4880.305864101727,
+      "liquidityUSD": 105647.27893164678,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789978313000,
+      "advisory": null
+    },
+    {
+      "symbol": "Vx",
+      "mint": "XsqgsbXwWogGJsNcVZ3TyVouy2MbTkfCFhCGGGcQZ2p",
+      "name": "Visa xStock",
+      "volume24hUSD": 1434.0112170196626,
+      "liquidityUSD": 1371.4820822507966,
+      "lastFetchedAt": 1789980605330,
+      "lastTradeAt": 1789977669000,
+      "advisory": null
+    },
+    {
+      "symbol": "NFLXx",
+      "mint": "XsEH7wWfJJu2ZT3UCFeVfALnVA6CP5ur7Ee11KmzVpL",
+      "name": "Netflix xStock",
+      "volume24hUSD": 1273.974697909194,
+      "liquidityUSD": 11493.122897178944,
+      "lastFetchedAt": 1789980192237,
+      "lastTradeAt": 1789978088000,
+      "advisory": null
+    },
+    {
+      "symbol": "NVOx",
+      "mint": "XsfAzPzYrYjd4Dpa9BU3cusBsvWfVB9gBcyGC87S57n",
+      "name": "Novo Nordisk xStock",
+      "volume24hUSD": 1020.7298591434376,
+      "liquidityUSD": 5998.737669692989,
+      "lastFetchedAt": 1789980218727,
+      "lastTradeAt": 1789978276000,
+      "advisory": null
+    },
+    {
+      "symbol": "AMBRx",
+      "mint": "XsaQTCgebC2KPbf27KUhdv5JFvHhQ4GDAPURwrEhAzb",
+      "name": "Amber xStock",
+      "volume24hUSD": 954.8589147090402,
+      "liquidityUSD": 27301.375461817654,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789944260000,
+      "advisory": null
+    },
+    {
+      "symbol": "MRVLx",
+      "mint": "XsuxRGDzbLjnJ72v74b7p9VY6N66uYgTCyfwwRjVCJA",
+      "name": "Marvell xStock",
+      "volume24hUSD": 794.7771199987135,
+      "liquidityUSD": 4943.645322044452,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789977648000,
+      "advisory": null
+    },
+    {
+      "symbol": "XOMx",
+      "mint": "XsaHND8sHyfMfsWPj6kSdd5VwvCayZvjYgKmmcNL5qh",
+      "name": "Exxon Mobil xStock",
+      "volume24hUSD": 664.625059055657,
+      "liquidityUSD": 18755.180660109134,
+      "lastFetchedAt": 1789980673614,
+      "lastTradeAt": 1789979055000,
+      "advisory": null
+    },
+    {
+      "symbol": "JPMx",
+      "mint": "XsMAqkcKsUewDrzVkait4e5u4y8REgtyS7jWgCpLV2C",
+      "name": "JPMorgan Chase xStock",
+      "volume24hUSD": 651.5197563972097,
+      "liquidityUSD": 1877.8188406449347,
+      "lastFetchedAt": 1789980644057,
+      "lastTradeAt": 1789977667000,
+      "advisory": null
+    },
+    {
+      "symbol": "VTIx",
+      "mint": "XsssYEQjzxBCFgvYFFNuhJFBeHNdLWYeUSP8F45cDr9",
+      "name": "Vanguard xStock",
+      "volume24hUSD": 418.1383905,
+      "liquidityUSD": 1546.365281772612,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789954240000,
+      "advisory": null
+    },
+    {
+      "symbol": "LLYx",
+      "mint": "Xsnuv4omNoHozR6EEW5mXkw8Nrny5rB3jVfLqi6gKMH",
+      "name": "Eli Lilly xStock",
+      "volume24hUSD": 413.30625800000007,
+      "liquidityUSD": 5326.881262641254,
+      "lastFetchedAt": 1789980660540,
+      "lastTradeAt": 1789977674000,
+      "advisory": null
+    },
+    {
+      "symbol": "CVXx",
+      "mint": "XsNNMt7WTNA2sV3jrb1NNfNgapxRF5i4i6GcnTRRHts",
+      "name": "Chevron xStock",
+      "volume24hUSD": 349.903006,
+      "liquidityUSD": 3814.1523783658276,
+      "lastFetchedAt": 1789980609904,
+      "lastTradeAt": 1789959750000,
+      "advisory": null
+    },
+    {
+      "symbol": "AMDx",
+      "mint": "XsXcJ6GZ9kVnjqGsjBnktRcuwMBmvKWh8S93RefZ1rF",
+      "name": "AMD xStock",
+      "volume24hUSD": 318.19031120423386,
+      "liquidityUSD": 28022.13652766201,
+      "lastFetchedAt": 1789980606050,
+      "lastTradeAt": 1789980050000,
+      "advisory": null
+    },
+    {
+      "symbol": "SNDKx",
+      "mint": "Xswbpc8UqU6e1j9QZEWCjBMjyvz4twqD7PCy6j2e7jj",
+      "name": "Sandisk Corporation xStock",
+      "volume24hUSD": 274.881583,
+      "liquidityUSD": 556.6939572987959,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789933361000,
+      "advisory": null
+    },
+    {
+      "symbol": "BMNRx",
+      "mint": "XsrBCwaH8c46xiqXBChzobgufRKxQxAWUWbndgBNzFn",
+      "name": "Bitmine xStock",
+      "volume24hUSD": 270.8672967370271,
+      "liquidityUSD": 2845.3240809657937,
+      "lastFetchedAt": 1789980130068,
+      "lastTradeAt": 1789974798000,
+      "advisory": null
+    },
+    {
+      "symbol": "ORCLx",
+      "mint": "XsjFwUPiLofddX5cWFHW35GCbXcSu1BCUGfxoQAQjeL",
+      "name": "Oracle xStock",
+      "volume24hUSD": 178.15765200000007,
+      "liquidityUSD": 22023.67866072832,
+      "lastFetchedAt": 1789980610586,
+      "lastTradeAt": 1789977657000,
+      "advisory": null
+    },
+    {
+      "symbol": "UNHx",
+      "mint": "XszvaiXGPwvk2nwb3o9C1CX4K6zH8sez11E6uyup6fe",
+      "name": "UnitedHealth xStock",
+      "volume24hUSD": 171.51362801971513,
+      "liquidityUSD": 15009.218415889181,
+      "lastFetchedAt": 1789980196878,
+      "lastTradeAt": 1789980071000,
+      "advisory": null
+    },
+    {
+      "symbol": "BTBTx",
+      "mint": "XsPLBFy59Q3hY59KLAJur8QyvziMF4xUxGTxXqXE7cT",
+      "name": "Bit Digital xStock",
+      "volume24hUSD": 100,
+      "liquidityUSD": 638.6148390768757,
+      "lastFetchedAt": 1789980843545,
+      "lastTradeAt": 1789972880187,
+      "advisory": null
+    },
+    {
+      "symbol": "ABTx",
+      "mint": "XsHtf5RpxsQ7jeJ9ivNewouZKJHbPxhPoEy6yYvULr7",
+      "name": "Abbott xStock",
+      "volume24hUSD": 80.71643757083501,
+      "liquidityUSD": 1755.9047602107082,
+      "lastFetchedAt": 1789980866320,
+      "lastTradeAt": 1789959967000,
+      "advisory": null
+    },
+    {
+      "symbol": "ADBEx",
+      "mint": "XsDZMGEU8zadWFCkTtPBoPWYcUX3JHVmghnwf2Mve2q",
+      "name": "Adobe xStock",
+      "volume24hUSD": 60.818673999999994,
+      "liquidityUSD": 1096.4595661296528,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1789945338000,
+      "advisory": null
+    },
+    {
+      "symbol": "AZNx",
+      "mint": "Xs3ZFkPYT2BN7qBMqf1j1bfTeTm1rFzEFSsQ1z3wAKU",
+      "name": "AstraZeneca xStock",
+      "volume24hUSD": 41.888916,
+      "liquidityUSD": 3637.023289469118,
+      "lastFetchedAt": 1789980868873,
+      "lastTradeAt": 1789945333000,
+      "advisory": null
+    },
+    {
+      "symbol": "PGx",
+      "mint": "XsYdjDjNUygZ7yGKfQaB6TxLh2gC6RRjzLtLAGJrhzV",
+      "name": "Procter & Gamble xStock",
+      "volume24hUSD": 39.23645211288301,
+      "liquidityUSD": 2886.503109580178,
+      "lastFetchedAt": 1789980867041,
+      "lastTradeAt": 1789980256000,
+      "advisory": null
+    },
+    {
+      "symbol": "MUx",
+      "mint": "XsQLZycSZ7QnBBdBXQaTbQdiUcbRqjNJgyBGAMzhHav",
+      "name": "Micron Technology xStock",
+      "volume24hUSD": 34.25894182640002,
+      "liquidityUSD": 494.8633222895456,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789973132000,
+      "advisory": null
+    },
+    {
+      "symbol": "ASMLx",
+      "mint": "XshuHQ6o6SVpUNawvnnTMxsZ4tacZsNgVCLorv7TkFq",
+      "name": "ASML xStock",
+      "volume24hUSD": 31.731882000000002,
+      "liquidityUSD": 97.74222285315696,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789967300000,
+      "advisory": null
+    },
+    {
+      "symbol": "ABBVx",
+      "mint": "XswbinNKyPmzTa5CskMbCPvMW6G5CMnZXZEeQSSQoie",
+      "name": "AbbVie xStock",
+      "volume24hUSD": 30.25379142860187,
+      "liquidityUSD": 8.600556758865759,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789928663000,
+      "advisory": null
+    },
+    {
+      "symbol": "IBMx",
+      "mint": "XspwhyYPdWVM8XBHZnpS9hgyag9MKjLRyE3tVfmCbSr",
+      "name": "International Business Machines xStock",
+      "volume24hUSD": 20.91752403063764,
+      "liquidityUSD": 2891.1290723750994,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789951088000,
+      "advisory": null
+    },
+    {
+      "symbol": "BACx",
+      "mint": "XswsQk4duEQmCbGzfqUUWYmi7pV7xpJ9eEmLHXCaEQP",
+      "name": "Bank of America xStock",
+      "volume24hUSD": 6.125943,
+      "liquidityUSD": 63.38260423364688,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789930109000,
+      "advisory": null
+    },
+    {
+      "symbol": "PEPx",
+      "mint": "Xsv99frTRUeornyvCfvhnDesQDWuvns1M852Pez91vF",
+      "name": "PepsiCo xStock",
+      "volume24hUSD": 6,
+      "liquidityUSD": 15053.374404413695,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789959686000,
+      "advisory": null
+    },
+    {
+      "symbol": "GSx",
+      "mint": "XsgaUyp4jd1fNBCxgtTKkW64xnnhQcvgaxzsbAq5ZD1",
+      "name": "Goldman Sachs xStock",
+      "volume24hUSD": 3.303176,
+      "liquidityUSD": 5738.134484349014,
+      "lastFetchedAt": 1789980866314,
+      "lastTradeAt": 1789903438000,
+      "advisory": null
+    },
+    {
+      "symbol": "APPx",
+      "mint": "XsPdAVBi8Zc1xvv53k4JcMrQaEDTgkGqKYeh7AYgPHV",
+      "name": "AppLovin xStock",
+      "volume24hUSD": 3.0786,
+      "liquidityUSD": 4643.803139133764,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1789975741000,
+      "advisory": null
+    },
+    {
+      "symbol": "UBERx",
+      "mint": "XsAsZLF4MmsvS1sDxRMrUz7REjHfwbC9UAMXSRBqgEB",
+      "name": "Uber xStock",
+      "volume24hUSD": 2.647181,
+      "liquidityUSD": 159.4829685231783,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789962917000,
+      "advisory": null
+    },
+    {
+      "symbol": "ACNx",
+      "mint": "Xs5UJzmCRQ8DWZjskExdSQDnbE6iLkRu2jjrRAB1JSU",
+      "name": "Accenture xStock",
+      "volume24hUSD": 2.00583810970254,
+      "liquidityUSD": 436.4681998814127,
+      "lastFetchedAt": 1789980677290,
+      "lastTradeAt": 1789980102000,
+      "advisory": null
+    },
+    {
+      "symbol": "SHEINx",
+      "mint": "Xs8w8HvDjT1DxYeHzhSkRT8wYUahJB9kRC7Fuiic2Hf",
+      "name": "SHEIN xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1789980721397,
+      "advisory": null
+    },
+    {
+      "symbol": "SKHYx",
+      "mint": "XsnhgGRQwhExfS2bmWzR6EYddKGPRGDEjeJsatkmKqU",
+      "name": "SK hynix xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1300.4748532823967,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1789878640000,
+      "advisory": null
+    },
+    {
+      "symbol": "BSPx",
+      "mint": "XsYMHtwJcWon5GkPHzdDbCCztKtKzEurJnbydxgjsqS",
+      "name": "Bending Spoons xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 32.995796888723305,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789672185000,
+      "advisory": null
+    },
+    {
+      "symbol": "STRKx",
+      "mint": "XsaQGz41BEQkS9xAB44uvUtuXcdLJAXEU1dogEzWMZ8",
+      "name": "Strategy PP Fixed xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 945.8978743786423,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1789712208000,
+      "advisory": null
+    },
+    {
+      "symbol": "VTx",
+      "mint": "XsEdDDTcVGJU6nvdRdVnj53eKTrsCkvtrVfXGmUK68V",
+      "name": "Vanguard Total World xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 328.5693356423036,
+      "lastFetchedAt": 1789977729025,
+      "lastTradeAt": 1789507665000,
+      "advisory": null
+    },
+    {
+      "symbol": "SCHFx",
+      "mint": "XsWAnFM77x6YvpdaZoos79R12o4Yj4r7EVkaTWddzhU",
+      "name": "Schwab International Equity xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.2513860394855896,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1789754937000,
+      "advisory": null
+    },
+    {
+      "symbol": "IEMGx",
+      "mint": "XsFnZawJdLdXfBSEt5Vw29K5vdBiHotdPLjUPafpfHs",
+      "name": "Core MSCI Emerging Markets xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1788856725000,
+      "advisory": null
+    },
+    {
+      "symbol": "IWMx",
+      "mint": "XsbELVbLGBkn7xfMfyYuUipKGt1iRUc2B7pYRvFTFu3",
+      "name": "Russell 2000 xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 173.37489823459185,
+      "lastFetchedAt": 1789978321349,
+      "lastTradeAt": 1788381061000,
+      "advisory": null
+    },
+    {
+      "symbol": "TMUSx",
+      "mint": "XswCi2U1G6Ppbw1QhG45yKb8UKuR1FKLJrquv2FZSD4",
+      "name": "T-Mobile xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.99891408,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "HUTx",
+      "mint": "XsG5QyZTQnVSpsXRpD92K5ZGoxXjsmfTyx7fW7r18DV",
+      "name": "Hut 8 xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0,
+      "lastFetchedAt": 1789977602865,
+      "lastTradeAt": 1784438531000,
+      "advisory": null
+    },
+    {
+      "symbol": "CORZx",
+      "mint": "XsBGEXxbBcuu8Nrokj14G8v4ezT3JYWWLneTzXK8t6Z",
+      "name": "Core Scientific xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 254.4435175417935,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1789054449000,
+      "advisory": null
+    },
+    {
+      "symbol": "RKLBx",
+      "mint": "XsKSh3QDynp6oms9yHjZXbZo3pKzUBoqUFKPHS2g9Bh",
+      "name": "Rocket Lab xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1789714203651,
+      "lastTradeAt": 1789627912000,
+      "advisory": null
+    },
+    {
+      "symbol": "PLx",
+      "mint": "XsMJtFbb8BwzQtck3oRXyAfs7SAPRuTXnSEDNd7BAVz",
+      "name": "Planet Labs xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "SPCEx",
+      "mint": "Xsgrm4D6VBTfDx5bs7GNdjtmWDgZ8V79r3YpsYwf5py",
+      "name": "Virgin Galactic xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.250577707875,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1786261108000,
+      "advisory": null
+    },
+    {
+      "symbol": "WBDx",
+      "mint": "XsZUSqxAXKJkEimvD4CoVvEb4WUC92TFgj5zRtBxFeL",
+      "name": "Warner Bros. Discovery xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.99889824,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "RBLXx",
+      "mint": "Xss5RAku5EH6UViFdvW7ss9xQjwQLsrs2opPMhb3k43",
+      "name": "Roblox xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 151.66904060550178,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789676542000,
+      "advisory": null
+    },
+    {
+      "symbol": "PANWx",
+      "mint": "XsQ6NfzzLH8nspjrB9X8R2K64Zz7Tnxqu12juDiMPMW",
+      "name": "Palo Alto Networks xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.99893154,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "LULUx",
+      "mint": "XsDmtC5EpfzJoCzDN2SJP98xpCsSR2CqdZauJSvHNXT",
+      "name": "lululemon xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1789979521403,
+      "advisory": null
+    },
+    {
+      "symbol": "WENx",
+      "mint": "Xs4uNhvBDAcp2mz3g9XR5q3vzLgmF1ANWxJgWk2d5u3",
+      "name": "Wendy's xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1789856823601,
+      "lastTradeAt": 1789770509000,
+      "advisory": null
+    },
+    {
+      "symbol": "ASTSx",
+      "mint": "XsR4LAtaBgTKTRUhiijY1ba13nx4bepeEcag2Pr4dZ1",
+      "name": "AST SpaceMobile xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 239.74497733904616,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1788238150000,
+      "advisory": null
+    },
+    {
+      "symbol": "PYPLx",
+      "mint": "XshWQWYVp5ff8CrAEsGmLVKD47nBWi3Ygn5v8wXK27G",
+      "name": "PayPal xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.5101110951004888,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789764354000,
+      "advisory": null
+    },
+    {
+      "symbol": "CLSKx",
+      "mint": "Xsn3H7ACEpSF2ULxeiD6kW4jRZXpurh8ZPttyfoS56W",
+      "name": "CleanSpark xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.29581284453878,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1788611534000,
+      "advisory": null
+    },
+    {
+      "symbol": "SBETx",
+      "mint": "XsEoih2x6nZuUjFwzGoba6MFmtzCkzW2c4YAm6baQbq",
+      "name": "SharpLink Gaming xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 104.50900432741247,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789743827000,
+      "advisory": null
+    },
+    {
+      "symbol": "WULFx",
+      "mint": "XsuwUbQSzCJN2wZabD1Gxf1MER2Ypa7hMzVMYB2WawJ",
+      "name": "TeraWulf xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.99889824,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "RIOTx",
+      "mint": "Xs31mE5EiqjSHEaiX9QDKCN6NvSGCqpJ6f1FNq2wri5",
+      "name": "Riot Platforms xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 87.59573392928,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789430084000,
+      "advisory": null
+    },
+    {
+      "symbol": "MARAx",
+      "mint": "XsguBZPkM9BDmxspmWe29EmrYZBv21ENcC27Pqh7grB",
+      "name": "MARA xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.8516421058263608,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789868742000,
+      "advisory": null
+    },
+    {
+      "symbol": "OKLOx",
+      "mint": "XsJb1p4Ks6VFggq68JyMz7S3kdRfkqh4wA6EMyxi4DD",
+      "name": "Oklo xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.999537,
+      "lastFetchedAt": 1782808012697,
+      "lastTradeAt": 1789730170000,
+      "advisory": null
+    },
+    {
+      "symbol": "GLXYx",
+      "mint": "Xs3c2aZenyRQwXjki5MDxJEJ2km27ef2rWQMFWx7QKJ",
+      "name": "Galaxy Digital xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789154585000,
+      "advisory": null
+    },
+    {
+      "symbol": "TONXx",
+      "mint": "XscE4GUcsYhcyZu5ATiGUMmhxYa1D5fwbpJw4K6K4dp",
+      "name": "TON xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "TBLLx",
+      "mint": "XsqBC5tcVQLYt8wqGCHRnAUUecbRYXoJCReD6w7QEKp",
+      "name": "TBLL xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.6302448611936401,
+      "lastFetchedAt": 1789980721397,
+      "lastTradeAt": 1789512727000,
+      "advisory": null
+    },
+    {
+      "symbol": "OPENx",
+      "mint": "XsGtpmjhmC8kyjVSWL4VicGu36ceq9u55PTgF8bhGv6",
+      "name": "OPEN xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0,
+      "lastFetchedAt": 1789980865486,
+      "lastTradeAt": 1789396391000,
+      "advisory": null
+    },
+    {
+      "symbol": "CRWDx",
+      "mint": "Xs7xXqkcK7K8urEqGg52SECi79dRp2cEKKuYjUePYDw",
+      "name": "CrowdStrike xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1878.1837450324133,
+      "lastFetchedAt": 1789980861503,
+      "lastTradeAt": 1789712503000,
+      "advisory": null
+    },
+    {
+      "symbol": "PMx",
+      "mint": "Xsba6tUnSjDae2VcopDB6FGGDaxRrewFCDa5hKn5vT3",
+      "name": "Philip Morris xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 280.4578609853955,
+      "lastFetchedAt": 1789978394025,
+      "lastTradeAt": 1789748305000,
+      "advisory": null
+    },
+    {
+      "symbol": "HONx",
+      "mint": "XsRbLZthfABAPAfumWNEJhPyiKDW6TvDVeAeW7oKqA2",
+      "name": "Honeywell xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 406.3145533399221,
+      "lastFetchedAt": 1789980867042,
+      "lastTradeAt": 1789744722000,
+      "advisory": null
+    },
+    {
+      "symbol": "MDTx",
+      "mint": "XsDgw22qRLTv5Uwuzn6T63cW69exG41T6gwQhEK22u2",
+      "name": "Medtronic xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.30307072117999995,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1785968873000,
+      "advisory": null
+    },
+    {
+      "symbol": "CMCSAx",
+      "mint": "XsvKCaNsxg2GN8jjUmq71qukMJr7Q1c5R2Mk9P8kcS8",
+      "name": "Comcast xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1030.8177523291497,
+      "lastFetchedAt": 1789980868101,
+      "lastTradeAt": 1789840409000,
+      "advisory": null
+    },
+    {
+      "symbol": "DHRx",
+      "mint": "Xseo8tgCZfkHxWS9xbFYeKFyMSbWEvZGFV1Gh53GtCV",
+      "name": "Danaher xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.0000019999079599999998,
+      "lastFetchedAt": 1789980868862,
+      "lastTradeAt": 1787171664000,
+      "advisory": null
+    },
+    {
+      "symbol": "TMOx",
+      "mint": "Xs8drBWy3Sd5QY3aifG9kt9KFs2K3PGZmx7jWrsrk57",
+      "name": "Thermo Fisher xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1.5059658567855057,
+      "lastFetchedAt": 1789980868487,
+      "lastTradeAt": 1789734780000,
+      "advisory": null
+    },
+    {
+      "symbol": "CRMx",
+      "mint": "XsczbcQ3zfcgAEt9qHQES8pxKAVG5rujPSHQEXi4kaN",
+      "name": "Salesforce xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 88.02906351109142,
+      "lastFetchedAt": 1789980861568,
+      "lastTradeAt": 1789812180000,
+      "advisory": null
+    },
+    {
+      "symbol": "LINx",
+      "mint": "XsSr8anD1hkvNMu8XQiVcmiaTP7XGvYu7Q58LdmtE8Z",
+      "name": "Linde xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 1158.2371412216448,
+      "lastFetchedAt": 1789980659923,
+      "lastTradeAt": 1789842269000,
+      "advisory": null
+    },
+    {
+      "symbol": "CSCOx",
+      "mint": "Xsr3pdLQyXvDJBFgpR5nexCEZwXvigb8wbPYp4YoNFf",
+      "name": "Cisco xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 437.56661049741354,
+      "lastFetchedAt": 1789980121340,
+      "lastTradeAt": 1789840432000,
+      "advisory": null
+    },
+    {
+      "symbol": "MRKx",
+      "mint": "XsnQnU7AdbRZYe2akqqpibDdXjkieGFfSkbkjX1Sd1X",
+      "name": "Merck xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 219.55661515001793,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789840480000,
+      "advisory": null
+    },
+    {
+      "symbol": "PFEx",
+      "mint": "XsAtbqkAP1HJxy7hFDeq7ok6yM43DQ9mQ1Rh861X8rw",
+      "name": "Pfizer xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 390.03726563808584,
+      "lastFetchedAt": 1789978921419,
+      "lastTradeAt": 1789852770000,
+      "advisory": null
+    },
+    {
+      "symbol": "HDx",
+      "mint": "XszjVtyhowGjSC5odCqBpW1CtXXwXjYokymrk7fGKD3",
+      "name": "Home Depot xStock",
+      "volume24hUSD": 0,
+      "lastFetchedAt": 1782808012697,
+      "advisory": null
+    },
+    {
+      "symbol": "MAx",
+      "mint": "XsApJFV9MAktqnAc6jqzsHVujxkGm9xcSUffaBoYLKC",
+      "name": "Mastercard xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 799.9958667882502,
+      "lastFetchedAt": 1789980863540,
+      "lastTradeAt": 1789867542000,
+      "advisory": null
+    },
+    {
+      "symbol": "JNJx",
+      "mint": "XsGVi5eo1Dh2zUpic4qACcjuWGjNv8GCt3dm5XcX6Dn",
+      "name": "Johnson & Johnson xStock",
+      "volume24hUSD": 0,
+      "liquidityUSD": 0.4600894904322,
+      "lastFetchedAt": 1789979521403,
+      "lastTradeAt": 1789735585000,
+      "advisory": null
+    }
+  ]
+}

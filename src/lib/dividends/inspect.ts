@@ -42,7 +42,7 @@ export async function inspectDividend(userId:string,wallet:string,stock:Stock,re
         method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=representation'},
         body:JSON.stringify({tracking_id:stored.id,event_id:event.eventId,event_version:event.version,
           checked_at:new Date().toISOString(),status:historyVerified?'history-checked':'blocked',
-          evidence:{blockers,history,fromSlot:snapshot?.balance_slot,toSlot:current.mintSlot,event,current}}),
+          evidence:{baselineId:snapshot?.id,blockers,history,fromSlot:snapshot?.balance_slot,toSlot:current.mintSlot,event,current}}),
       });
       verificationId=observations[0]?.id??null;
     }

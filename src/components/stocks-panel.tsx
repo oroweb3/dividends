@@ -18,6 +18,30 @@ export function StocksPanel({wallet}: {wallet: string}) {
   const [loading,setLoading]=useState(true);
   const [saving,setSaving]=useState(false);
   const [message,setMessage]=useState('');
+  const [search,setSearch]=useState('');
+  const [tracking,setTracking]=useState<Record<string,string|null>>({});
+  const [checkpointDates,setCheckpointDates]=useState<Record<string,string|null>>({});
+  const [trackingLoading,setTrackingLoading]=useState(true);
+  const [trackingError,setTrackingError]=useState('');
+  useEffect(()=>{
+    const controller=new AbortController();
+    async function loadTracking(){
+      setTrackingLoading(true);setTrackingError('');
+      try{
+        const token=await getAccessToken();
+        const response=await fetch('/api/tracking',{headers:{Authorization:`Bearer ${token}`},signal:controller.signal,cache:'no-store'});
+        const result=await response.json();
+        if(!response.ok)throw new Error(result.error||'Tracking unavailable.');
+        if(result.wallet!==wallet)throw new Error('Wallet changed. Refresh your account.');
+        if(!controller.signal.aborted){
+          setTracking(Object.fromEntries(result.tracking.map((row:{symbol:string;tracking:{enabled_at:string}|null})=>[row.symbol,row.tracking?.enabled_at??null])));
+          setCheckpointDates(Object.fromEntries(result.tracking.map((row:{symbol:string;tracking:{baseline:{observed_at:string}}|null})=>[row.symbol,row.tracking?.baseline.observed_at??null])));
+        }
+      }catch(e){if(!controller.signal.aborted)setTrackingError(e instanceof Error?e.message:'Tracking unavailable.');}
+      finally{if(!controller.signal.aborted)setTrackingLoading(false);}
+    }
+    void loadTracking();return()=>controller.abort();
+  },[getAccessToken,wallet,refresh]);
   useEffect(()=>{
     const controller=new AbortController();
     async function load() {
@@ -49,16 +73,19 @@ export function StocksPanel({wallet}: {wallet: string}) {
   }
   return <section className="stocks-section" aria-label="Supported stocks">
     <div className="stocks-heading"><div><p className="eyebrow">YOUR PORTFOLIO</p><h2>Stock holdings</h2></div><button className="text-button" disabled={loading} onClick={()=>setRefresh(n=>n+1)}>{loading?'Refreshing…':'Refresh stocks'}</button></div>
-    <p className="muted holdings-intro">Your supported stocks, all in one place.</p>
+    <p className="muted holdings-intro">20 supported xStocks, including stocks and ETFs. Only verified dividend events can qualify for conversion.</p>
     {data&&<div className="monitor-banner"><span className="status-dot" /><div><strong>{data.executionEnabled?'Conversions enabled':'Dividend tracking only'}</strong><p>{data.executionEnabled?'Tracked dividends must pass eligibility and permission checks before conversion.':'We’re checking for eligible dividends. Automatic conversion to GOLD isn’t enabled yet.'}</p></div><span className="tag">{data.executionEnabled?'Eligibility required':'Tracking only'}</span></div>}
     {error && <p className="error" role="alert">{error}{data?' Showing the previous observation.':''}</p>}
     {loading&&!data&&<p role="status">Reading stock balances and issuer events…</p>}
     {data?.chainError&&<p className="error" role="alert">{data.chainError}</p>}
-    <div className="stock-grid">{data?.stocks.map(stock=><article className="panel stock-card" key={stock.mint}>
+    <label htmlFor="stock-search">Find a stock or ETF</label>
+    <input id="stock-search" type="search" placeholder="Search by name or symbol" value={search} onChange={event=>setSearch(event.target.value)} />
+    {data&&!data.stocks.some(stock=>`${stock.name} ${stock.symbol}`.toLowerCase().includes(search.trim().toLowerCase()))&&<p>No matching assets.</p>}
+    <div className="stock-grid">{data?.stocks.filter(stock=>`${stock.name} ${stock.symbol}`.toLowerCase().includes(search.trim().toLowerCase())).map(stock=><article className="panel stock-card" key={stock.mint}>
       <div className="panel-heading"><h3>{stock.name}</h3><span className="tag">{stock.symbol}</span></div>
       <p className="stock-balance">{stock.balance?new Intl.NumberFormat('en-US',{maximumFractionDigits:8}).format(Number(stock.balance.economicBalance)):'Unavailable'} <span>{stock.symbol}</span></p>
       <p className="balance-caption">Dividend-adjusted balance</p>
-      <TrackingControl key={`${wallet}:${stock.symbol}`} symbol={stock.symbol} wallet={wallet} />
+      <TrackingControl key={`${wallet}:${stock.symbol}`} symbol={stock.symbol} wallet={wallet} initialEnabledAt={tracking[stock.symbol]??null} loading={trackingLoading} loadError={trackingError} executionEnabled={data.executionEnabled} checkpointAt={checkpointDates[stock.symbol]??null} onEnabled={(symbol,enabledAt,checkpointAt)=>{setTracking(previous=>({...previous,[symbol]:enabledAt}));setCheckpointDates(previous=>({...previous,[symbol]:checkpointAt}));}} />
       <p className="quote-line">Reference quote: {stock.quote.price===null?'Unavailable':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(stock.quote.price)}{stock.quote.status==='stale'?' · Older quote':''}</p>
       {stock.quote.price===null?<p className="small-note">Price feed temporarily unavailable. Balances and dividend checks are separate.</p>:<>
         <p className="small-note">{stock.quote.source} · Updated: {stock.quote.cachedAt?date(stock.quote.cachedAt):'Time unavailable'}<br />Last trade: {stock.quote.lastTradeAt?date(stock.quote.lastTradeAt):'Time unavailable'}</p>

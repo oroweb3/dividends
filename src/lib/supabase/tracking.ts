@@ -14,3 +14,10 @@ export async function readTracking(userId:string,wallet:string,mint:string) {
   const rows=await trackingRequest(`dividend_tracking?${query}`);
   return rows[0]?trackingSchema.parse(rows[0]):null;
 }
+
+// One scoped query for the portfolio, rather than one query per supported asset.
+export async function readWalletTracking(userId:string,wallet:string) {
+  const query=new URLSearchParams({select:'id,enabled_at,baseline,stock_mint',user_id:`eq.${userId}`,wallet_address:`eq.${wallet}`});
+  const rows=await trackingRequest(`dividend_tracking?${query}`);
+  return z.array(trackingSchema.extend({stock_mint:z.string()})).parse(rows);
+}

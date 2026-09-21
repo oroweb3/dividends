@@ -1,0 +1,33 @@
+do $$
+declare t uuid; v uuid; c uuid; initial jsonb; next_checkpoint jsonb; later_checkpoint jsonb; original_enabled timestamptz; rejected boolean;
+begin
+ initial:=jsonb_build_object('id','original','user_id','test-user','wallet_address','test-wallet','stock_mint','test-mint','raw_balance','1000','active_multiplier','1','decimals',8,'balance_slot',10,'mint_slot',11,'chain_timestamp',extract(epoch from clock_timestamp()-interval '2 minutes')::bigint,'observed_at',clock_timestamp()-interval '2 minutes','token_accounts',jsonb_build_array(jsonb_build_object('address','test-account','rawBaseUnits','1000')));
+ insert into dividend_tracking(user_id,wallet_address,stock_mint,symbol,enabled_at,baseline) values('test-user','test-wallet','test-mint','NVDAx',clock_timestamp()-interval '3 minutes',initial) returning id,enabled_at into t,original_enabled;
+ insert into dividend_verifications(tracking_id,event_id,event_version,status,evidence) values(t,'old-event',1,'history-checked',jsonb_build_object('baselineId','original','blockers','[]'::jsonb,'history',jsonb_build_object('status','no-activity-observed'),'current',jsonb_build_object('rawBaseUnits','1000'),'event',jsonb_build_object('effectiveTimeUtc',clock_timestamp()-interval '1 minute','multiplierOld','1','multiplierNew','1.1'))) returning id into v;
+ next_checkpoint:=initial||jsonb_build_object('id','next','raw_balance','900','active_multiplier','1.1','balance_slot',20,'mint_slot',21,'chain_timestamp',extract(epoch from clock_timestamp()-interval '15 seconds')::bigint,'observed_at',clock_timestamp()-interval '15 seconds','token_accounts',jsonb_build_array(jsonb_build_object('address','test-account','rawBaseUnits','900')));
+ rejected:=false;begin perform restart_dividend_checkpoint('other-user',t,'original',next_checkpoint);exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL wrong owner accepted';end if;
+ rejected:=false;begin perform restart_dividend_checkpoint('test-user',t,'original',next_checkpoint||jsonb_build_object('raw_balance','899'));exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL inconsistent account sum accepted';end if;
+ perform restart_dividend_checkpoint('test-user',t,'original',next_checkpoint);
+ if not exists(select 1 from dividend_tracking where id=t and baseline=next_checkpoint and initial_baseline=initial and enabled_at=original_enabled) then raise exception 'FAIL original enrollment/history changed';end if;
+ if (select count(*) from dividend_tracking_checkpoints where tracking_id=t)<>1 then raise exception 'FAIL audit missing';end if;
+ rejected:=false;begin perform restart_dividend_checkpoint('test-user',t,'original',next_checkpoint);exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL stale concurrent reset accepted';end if;
+ rejected:=false;begin perform reserve_dividend_claim('test-user',v,gen_random_uuid());exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL stale verification accepted after reset';end if;
+ update dividend_verifications set evidence=jsonb_set(evidence,'{baselineId}','"next"') where id=v;
+ rejected:=false;begin perform reserve_dividend_claim('test-user',v,gen_random_uuid());exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL old dividend accepted after reset';end if;
+ update dividend_verifications set event_id='future-event',evidence=jsonb_build_object('baselineId','next','blockers','[]'::jsonb,'history',jsonb_build_object('status','no-activity-observed'),'current',jsonb_build_object('rawBaseUnits','900'),'event',jsonb_build_object('effectiveTimeUtc',clock_timestamp()-interval '5 seconds','multiplierOld','1.1','multiplierNew','1.2')) where id=v;
+ c:=reserve_dividend_claim('test-user',v,gen_random_uuid());
+ if (select raw_amount from dividend_claim_reservations where id=c)<>75 then raise exception 'FAIL exact dividend amount';end if;
+ rejected:=false;begin perform reserve_dividend_claim('test-user',v,gen_random_uuid());exception when unique_violation then rejected:=true;end;
+ if not rejected then raise exception 'FAIL duplicate dividend accepted';end if;
+ later_checkpoint:=next_checkpoint||jsonb_build_object('id','later','balance_slot',30,'mint_slot',31,'observed_at',clock_timestamp(),'chain_timestamp',extract(epoch from clock_timestamp())::bigint);
+ rejected:=false;begin perform restart_dividend_checkpoint('test-user',t,'next',later_checkpoint);exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL unresolved reservation allowed checkpoint reset';end if;
+ update dividend_claim_reservations set status='review-required' where id=c;
+ rejected:=false;begin perform restart_dividend_checkpoint('test-user',t,'next',later_checkpoint);exception when others then rejected:=true;end;
+ if not rejected then raise exception 'FAIL uncertain execution allowed checkpoint reset';end if;
+end $$;
