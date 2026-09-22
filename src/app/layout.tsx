@@ -26,7 +26,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Providers>
           <header className="header">
             <Link href="/" className="brand" aria-label="Dividends by Oro home"><span className="brand-name">Dividends</span><span className="brand-endorsement">by <OroLogo className="oro-logo" /></span></Link>
-            <span className="network"><span /> Built on Solana</span>
           </header>
           <main>{children}</main>
           <footer><span>Your dividends. In gold.</span><span>Dividends by Oro · Tracking preview</span></footer>
