@@ -8,9 +8,15 @@ import "./globals.css";
 const serif = localFont({ src: "./fonts/OrticaLinear-Regular.otf", variable: "--font-domaine", weight: "400", display: "swap" });
 const sans = localFont({ src: "./fonts/InstrumentSans.ttf", variable: "--font-sans", weight: "400 700", display: "swap" });
 
+const title = "Dividends by Oro — Your dividends. In gold.";
+const description = "Track your xStocks and turn eligible future dividends into Oro GOLD. Your stocks stay yours.";
 export const metadata: Metadata = {
-  title: "Dividends by Oro — Keep your stocks. Save in gold.",
-  description: "Make your stock dividends programmable. Keep your stocks. Save your dividends in gold.",
+  metadataBase: new URL("https://dividends.oro.finance"),
+  applicationName: "Dividends by Oro",
+  title,
+  description,
+  openGraph: { title, description, siteName: "Dividends by Oro", type: "website" },
+  twitter: { card: "summary", title, description },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -23,7 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span className="network"><span /> Built on Solana</span>
           </header>
           <main>{children}</main>
-          <footer><span>Stock ownership. A golden perspective.</span><span>Dividends by Oro · Phase 2 preview</span></footer>
+          <footer><span>Your dividends. In gold.</span><span>Dividends by Oro · Tracking preview</span></footer>
         </Providers>
       </body>
     </html>
