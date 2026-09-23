@@ -8,7 +8,8 @@
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint .",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js"
+    "test": "tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js",
+    "test:integration": "tsc -p tsconfig.integration.json && node --env-file=.env scripts/test-automation-lifecycle.cjs"
   },
   "engines": {
     "node": ">=22.12.0"

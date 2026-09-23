@@ -1,5 +1,7 @@
 # Connected dividend execution
 
+**Current operating reference (September 23):** [Production rollout and recovery](production-rollout.md). Connected lifecycle testing now covers 30 scenarios, in addition to 60 application tests. The previous real sponsored principal swap succeeded; no genuine dividend lifecycle has completed live. The status and test counts in the implementation history below are superseded. Do not infer the current user's delegation from historical notes.
+
 The server now connects verified eligibility, Titan preparation/simulation, reservation, durable transaction storage, delegated signing, submission and finalized confirmation/reconciliation. Live execution is disabled in the current environment and the user's delegation remains revoked.
 
 ## Entry points

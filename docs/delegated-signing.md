@@ -1,5 +1,7 @@
 # Delegated signing for Dividends by Oro
 
+**September 23 status:** Signing, submission, scheduled execution and recovery are implemented. Live read-back verified the locally configured user key/quorum/policy and sponsor wallet/key/quorum/policy today. A real principal swap succeeded previously; 30 connected lifecycle scenarios now pass. Production activation was approved and reported completed by the user on September 23, and a genuine dividend has not been converted live. See [production rollout and recovery](production-rollout.md). Historical status paragraphs below describe earlier milestones and are not current wallet permission evidence.
+
 Decision: include delegated signing in V1. Users authorize automation once from their embedded Solana wallet, and can revoke that authority. Do not require approval for every dividend conversion. This decision supersedes the earlier proposal for manual transaction approval in V1.
 
 ## Current status

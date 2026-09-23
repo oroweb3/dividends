@@ -4,6 +4,8 @@ Standalone Next.js / TypeScript app built for the **Stocklana hackathon**. The p
 
 ## Current scope
 
+**September 23 update:** The current app supports 20 assets, tracking, eligibility checks, sponsored delegated execution, reconciliation and checkpoint rollover. Production activation was approved and reported completed by the user on September 23; no genuine dividend has yet completed live conversion. The 30 connected lifecycle scenarios and 60 existing tests pass. Use [production rollout and recovery](docs/production-rollout.md) and [HANDOFF.md](HANDOFF.md) for current state. The phase-by-phase notes below are historical and contain superseded implementation status.
+
 Phase 1: Privy email authentication, a user-owned Solana embedded wallet, address display/copy, and sign-out. Fresh wallet creation and persistence through refresh and re-login were verified. Wallet creation is an explicit **Create Dividend Account** action after SDK initialization; login-time automatic creation stalled during initial testing. Slow setup states show recovery after 20 seconds without starting a concurrent creation request.
 
 Phase 2: AAPLx, SPYx, and NVDAx mainnet balances, exact decimal economic-balance display, mint-derived decimals, Token-2022 scaled UI multiplier inspection, issuer indicative prices, issuer corporate-action history/upcoming data, and development snapshot capture. Trading, preferences, offline monitoring, dividend entitlement calculation, and execution are **not implemented**.
