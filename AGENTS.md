@@ -1,6 +1,6 @@
 # Project continuity
 
-Before resuming work, read `HANDOFF.md`. Its top section is the current authoritative state; historical notes below it may be superseded. Honor the paused state until the user asks to resume. Never expose `.env` values.
+Before resuming work, read `HANDOFF.md`. If the ignored local file `.local/HANDOFF.private.md` exists, also read it for private continuity; never copy its personal account details or credentials into tracked files. Its top section is the current authoritative state; historical notes below it may be superseded. Honor the paused state until the user asks to resume. Never expose `.env` values.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
